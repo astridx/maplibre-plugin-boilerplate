@@ -24,6 +24,33 @@
         center: [7.2, 50.3], // Startposition [lng, lat]
         zoom: 1, // Zoom
       });
+
+      map.addControl(new maplibregl.FullscreenControl());
+
+      map.addControl(
+        new maplibregl.AttributionControl({
+          customAttribution: "Attributiontext",
+        })
+      );
+
+      map.addControl(
+        new maplibregl.GeolocateControl({
+          positionOptions: {
+            enableHighAccuracy: true,
+          },
+          trackUserLocation: true,
+        })
+      );
+
+      var nav = new maplibregl.NavigationControl();
+      map.addControl(nav, "top-left");
+
+      var scale = new maplibregl.ScaleControl({
+        maxWidth: 80,
+        unit: "imperial",
+      });
+      map.addControl(scale);
+      scale.setUnit("metric");
     </script>
   </body>
 </html>
