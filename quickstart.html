@@ -8,8 +8,13 @@
       content="initial-scale=1,maximum-scale=1,user-scalable=no"
     />
     <script src="https://unpkg.com/maplibre-gl@1.15.2/dist/maplibre-gl.js"></script>
+    <script src="foo.js"></script>
     <link
       href="https://unpkg.com/maplibre-gl@1.15.2/dist/maplibre-gl.css"
+      rel="stylesheet"
+    />
+    <link
+      href="foo.css"
       rel="stylesheet"
     />
   </head>
@@ -51,6 +56,8 @@
       });
       map.addControl(scale);
       scale.setUnit("metric");
+
+      map.addControl(new Foo());
     </script>
   </body>
 </html>
